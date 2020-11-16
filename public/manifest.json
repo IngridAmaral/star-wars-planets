@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "star-wars-planets",
+  "name": "Star Wars Planets Information",
   "icons": [
     {
       "src": "favicon.ico",
