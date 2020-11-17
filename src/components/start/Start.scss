@@ -1,0 +1,45 @@
+@import '../../styles';
+
+.start-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+
+  .text-discover {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    letter-spacing: 1px;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .start-container {
+    .star-wars {
+      width: 100%;
+      height: auto;
+    }
+
+    .text-discover {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .start-container {
+    .star-wars {
+      width: 85%;
+      height: auto;
+    }
+  }
+}

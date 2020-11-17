@@ -1,9 +1,6 @@
 @import 'styles';
 
 .app-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: url('https://win.heart.co.uk/starwars-galaxy/img/bg-fallback.jpg') no-repeat center
     center fixed;
   height: 100vh;
@@ -11,9 +8,41 @@
   font-family: arial;
   color: white;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .wrapper {
-    border: 0.2rem solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border: 0.2rem solid $primary-color;
     padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 80%;
+    height: 60%;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .app-container {
+    .wrapper {
+      width: 60%;
+      height: 60%;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .app-container {
+    .wrapper {
+      width: 35%;
+      height: 60%;
+    }
   }
 }
