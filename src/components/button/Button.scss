@@ -1,0 +1,41 @@
+@import '../../styles';
+
+.button-container {
+  outline: none;
+  width: 30%;
+  padding: 0.5rem;
+  border: none;
+  border: solid 0.2rem $primary-color;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.button-container:active {
+  background: white;
+  color: black;
+}
+
+.button-container:hover {
+  background: $primary-color;
+  color: black;
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .button-container {
+    width: 20%;
+    padding: 0.85rem;
+    font-size: 1.5rem;
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .button-container {
+    width: 10%;
+  }
+}

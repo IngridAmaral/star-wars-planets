@@ -6,6 +6,7 @@ import { RootState } from './redux/store';
 import { getPlanets } from './redux/reducers/planets';
 import Loading from './components/loading/Loading';
 import Start from './components/start/Start';
+import Button from './components/button/Button';
 import './App.scss';
 
 const mapStateToProps = (state: RootState) => ({
@@ -35,7 +36,7 @@ class App extends React.Component<AppProps> {
         <div className="wrapper">
           <Start />
         </div>
-        <button type="button">Start</button>
+        <Button text="start" />
       </div>
     );
   }
