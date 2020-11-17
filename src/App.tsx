@@ -25,8 +25,11 @@ class App extends React.Component<AppProps> {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">hello</header>
+      <div className="app-container">
+        <div className="wrapper">
+          <div>Planet Name</div>
+          <div>decription</div>
+        </div>
       </div>
     );
   }

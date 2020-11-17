@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
-}
+@import url(https://allfont.net/allfont.css?fonts=star-jedi);
+@import 'styles';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: url('https://win.heart.co.uk/starwars-galaxy/img/bg-fallback.jpg') no-repeat center
+    center fixed;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Star Jedi', arial;
   color: white;
-}
+  font-size: 1rem;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .wrapper {
+    border: 0.2rem solid white;
+    padding: 1rem;
   }
 }
