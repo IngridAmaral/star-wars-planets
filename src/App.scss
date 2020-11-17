@@ -39,4 +39,10 @@
 
 // NOTEBOOK
 @media (min-width: 1024px) {
+  .app-container {
+    .wrapper {
+      width: 35%;
+      height: 60%;
+    }
+  }
 }
