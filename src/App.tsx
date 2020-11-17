@@ -4,6 +4,7 @@ import { bindActionCreators, Action, Dispatch } from 'redux';
 import fetchPlanetsDispatcher from './redux/actions-dispatcher/planets';
 import { RootState } from './redux/store';
 import { getPlanets } from './redux/reducers/planets';
+import Loading from './components/loading/Loading';
 import './App.scss';
 
 const mapStateToProps = (state: RootState) => ({
@@ -24,11 +25,13 @@ class App extends React.Component<AppProps> {
   }
 
   render() {
+    const { planets } = this.props;
+
     return (
       <div className="app-container">
         <div className="wrapper">
+          {!Object.keys(planets).length && <Loading />}
           <div>Planet Name</div>
-          <div>decription</div>
         </div>
       </div>
     );
