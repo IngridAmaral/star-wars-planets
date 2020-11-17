@@ -31,7 +31,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    // "linebreak-style": "off",
+    "import/no-cycle": "off",
     "prettier/prettier": [
       "error",
       {
