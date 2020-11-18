@@ -7,9 +7,7 @@ type GameDisplayProps = {
 };
 
 const GameDisplay = ({ planet }: GameDisplayProps): JSX.Element => (
-  <div className="game-container">
-    <span className="text-discover">{planet.name}</span>
-  </div>
+  <div className="game-container">{planet.name}</div>
 );
 
 export default GameDisplay;
