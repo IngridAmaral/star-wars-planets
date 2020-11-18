@@ -4,7 +4,7 @@ import { Actions } from '../actions/planets';
 import { RootState } from '../store';
 
 const initialState: PlanetsState = {
-  data: {},
+  data: { count: 0, next: '', previous: null, results: [] },
   error: null,
   loading: false
 };

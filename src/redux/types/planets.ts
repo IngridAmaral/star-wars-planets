@@ -30,6 +30,6 @@ export type Planets = {
 
 export type PlanetsState = {
   readonly loading: boolean;
-  readonly data: Planets | Record<string, unknown>;
+  readonly data: Planets;
   readonly error: Error | null;
 };
