@@ -25,6 +25,26 @@
     width: 80%;
     height: 60%;
   }
+
+  .wrapper.transition {
+    opacity: 0;
+    transform: rotateY(360deg);
+    transition: all 0.2s ease-in;
+  }
+
+  .wrapper.transition:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+  }
+
+  .wrapper.stop-transition {
+    opacity: 1;
+    transform: rotateY(0);
+    transition: all 0.2s ease-in;
+  }
 }
 
 // IPAD
@@ -32,7 +52,7 @@
   .app-container {
     .wrapper {
       width: 60%;
-      height: 60%;
+      height: 40%;
     }
   }
 }

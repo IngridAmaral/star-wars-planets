@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { bindActionCreators, Action, Dispatch } from 'redux';
-import fetchPlanetsDispatcher from './redux/actions-dispatcher/planets';
 import { RootState } from './redux/store';
+import fetchPlanetsDispatcher from './redux/actions-dispatcher/planets';
 import { getPlanets } from './redux/reducers/planets';
 import Loading from './components/loading/Loading';
 import Start from './components/start/Start';
@@ -21,20 +21,36 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 type AppProps = PropsFromRedux;
-type AppState = { isStartPage: boolean; currentPlanetIndex: number };
+type AppState = {
+  isStartPage: boolean;
+  currentPlanetIndex: number;
+  shouldTransition: boolean;
+};
 class App extends React.Component<AppProps, AppState> {
   state = {
     isStartPage: true,
-    currentPlanetIndex: 0
+    currentPlanetIndex: 0,
+    shouldTransition: false
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { fetchPlanets } = this.props;
+
     fetchPlanets();
   }
 
+  activateTransition = () => {
+    this.setState((prevState) => ({ shouldTransition: !prevState.shouldTransition }));
+
+    setTimeout(() => {
+      this.setState((prevState) => ({ shouldTransition: !prevState.shouldTransition }));
+    }, 500);
+  };
+
   changePage = () => {
     this.setState((prevState) => ({ isStartPage: !prevState.isStartPage }));
+
+    this.activateTransition();
   };
 
   nextPlanet = () => {
@@ -45,10 +61,12 @@ class App extends React.Component<AppProps, AppState> {
       currentPlanetIndex:
         results.length - 1 <= prevState.currentPlanetIndex ? 0 : prevState.currentPlanetIndex + 1
     }));
+
+    this.activateTransition();
   };
 
   renderPage = () => {
-    const { isStartPage, currentPlanetIndex } = this.state;
+    const { isStartPage, currentPlanetIndex, shouldTransition } = this.state;
     const { planets } = this.props;
     const { results } = planets;
     const buttonFunction = isStartPage ? this.changePage : this.nextPlanet;
@@ -61,7 +79,9 @@ class App extends React.Component<AppProps, AppState> {
 
     return (
       <>
-        <div className={`wrapper ${!isStartPage ? 'gameTransition' : 'tt'}`}>{pageContent}</div>
+        <div className={`wrapper ${shouldTransition ? 'transition' : 'stop-transition'}`}>
+          {pageContent}
+        </div>
         <Button text={button} changePage={buttonFunction} />
       </>
     );
