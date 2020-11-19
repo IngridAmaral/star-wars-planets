@@ -1,22 +1,77 @@
 @import '../../styles';
 
-.game-container {
+.game-planet-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
   width: 100%;
+  text-transform: uppercase;
+
+  .name {
+    width: 100%;
+    height: fit-content;
+    border-bottom: solid 0.2rem $primary-color;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    padding-top: 1rem;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      background-color: black;
+      font-weight: bold;
+
+      .planet-info {
+        margin-top: 0.2rem;
+        font-weight: normal;
+        height: 100%;
+        letter-spacing: 1px;
+      }
+    }
+
+    .featured-item {
+      font-weight: bold;
+    }
+  }
 }
 
 // IPAD
 @media (min-width: 768px) {
-  // .game-container {
-  // }
+  .game-planet-container {
+    .description {
+      .item {
+        flex-direction: row;
+        .planet-info {
+          text-align: end;
+          margin-top: 0;
+        }
+      }
+
+      .featured-item {
+        justify-content: space-between;
+        display: flex;
+        .films {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  // .game-container {
-  // }
 }
