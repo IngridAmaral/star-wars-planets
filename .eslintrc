@@ -32,6 +32,7 @@
   },
   "rules": {
     "import/no-cycle": "off",
+    "react/state-in-constructor": "off",
     "prettier/prettier": [
       "error",
       {
